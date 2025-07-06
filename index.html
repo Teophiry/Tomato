@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>tomato leaf Diseas Detection</title>
+</head>
+<body>
+    <h1>Upload an Image to Detect Plant Disease</h1>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Upload">
+    </form>
+    {% if prediction %}
+        <h2>Prediction: {{ prediction }}</h2>
+        <h3>Confidence: {{ confidence }}</h3>
+        <img src="{{ image_path }}" width="300">
+    {% endif %}
+    {% if message %}
+        <p>{{ message }}</p>
+    {% endif %}
+</body>
+</html>
